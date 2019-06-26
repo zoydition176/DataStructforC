@@ -14,6 +14,8 @@ int main()
 {
     sqList L;
     L.length = 20;
-    L.data[100] = {20,20,20,10,5};
+    L.data[0] = {20};
+    L.data[1] = {20};
+    L.data[2] = {20};
     printf("length is :%d", L.length);
 }
