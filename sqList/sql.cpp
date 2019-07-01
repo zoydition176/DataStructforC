@@ -11,12 +11,11 @@ struct sqList
 void sqListFilling(sqList *&k)
 {
     int n = 0;
-    // if(k->length>0){
-        
-    // }
-    for (int i = 0; i < k->length; i++)
-    {
-        k->data[i] = i;
+    if(k->length>0){
+        for (int i = 0; i < k->length; i++)
+        {
+            k->data[i] = i;
+        }
     }
 };
 int main()
