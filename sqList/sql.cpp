@@ -8,34 +8,24 @@ struct sqList
     int length;
 };
 
-void sqListFilling(sqList k)
+void sqListFilling(sqList *&k)
 {
     int n = 0;
-    // if(k.length>0){
-    //     for(int i=0;i<k.length;i++){
-    //         k.data[i] = i;
-    //     }
+    // if(k->length>0){
+        
     // }
-    for (int q = 0; q <= 11; q++)
+    for (int i = 0; i < k->length; i++)
     {
-        k.data[q] = 0;
-        // printf("%d\n", L.data[q]);
+        k->data[i] = i;
     }
 };
 int main()
 {
-    int test;
-    sqList L;
-    L.length = 20;
+    sqList *L = (sqList *)malloc(sizeof(sqList));
+    L->length = 20;
     sqListFilling(L);
-    // for (int q = 0; q <= 11; q++)
-    // {
-    //     L.data[q] = 0;
-    //     printf("%d\n", L.data[q]);
-    // }
-    for (int i = 0; i <= 10; i++)
+    for (int i = 0; i < L->length; i++)
     {
-        // L.data[q] = 0;
-        printf("%d\n", L.data[i]);
+        printf("%d\n", L->data[i]);
     }
 }
