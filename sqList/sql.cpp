@@ -11,10 +11,12 @@ struct sqList
 void sqListFilling(sqList *&k)
 {
     int n = 0;
+    srand((unsigned)time(NULL));
     if(k->length>0){
         for (int i = 0; i < k->length; i++)
         {
-            k->data[i] = i;
+            n = rand()%20;
+            k->data[i] = n;
         }
     }
 };
