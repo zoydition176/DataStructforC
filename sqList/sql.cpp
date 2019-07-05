@@ -30,8 +30,8 @@ void sqListFilling(sqList *&k,int q)
 };
 
 // 顺序表元素获取
-int getElement(){
-    
+int getElement(int i){
+
 }
 
 int main()
