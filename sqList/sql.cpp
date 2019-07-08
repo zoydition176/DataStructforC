@@ -61,6 +61,8 @@ int main()
         scanf("%d", &choice);
         switch (choice)
         {
+            case 1:
+            char name;
             
         }
     }
