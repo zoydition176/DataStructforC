@@ -45,8 +45,8 @@ int main()
 {
     int start = DONE;
     int choice;
-    sqList *L = (sqList *)malloc(sizeof(sqList));
-    sqListFilling(L,10);
+    // sqList *L = (sqList *)malloc(sizeof(sqList));
+    // sqListFilling(L,10);
     // for (int i = 0; i < L->length; i++)
     // {
     //     printf("%d\n", L->data[i]);
@@ -56,14 +56,21 @@ int main()
         printf("*****欢迎使用c与数据结构第一章线性表操作演示程序*****\n");
         printf("*****请选择操作*****\n");
         printf("*****按 1 :创建顺序表*****\n");
-        printf("*****按 1 :创建顺序表*****\n");
-        printf("按 9： 退出顺序表操作演示程序\n");
+        printf("*****按 2 :创建顺序表*****\n");
+        printf("*****按 9： 退出顺序表操作演示程序*****\n");
         scanf("%d", &choice);
         switch (choice)
         {
             case 1:
-            char name;
-            
+            int name;
+            printf("您选择了1号操作:创建顺序表");
+            printf("请输入顺序表的表长：\n");
+            scanf("%d", &name);
+            sqList *L = (sqList *)malloc(sizeof(sqList));
+            sqListFilling(L, name);
+            printf("创建顺序表成功");
+            system("pause");
+            break;
         }
     }
     
