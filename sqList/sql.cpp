@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-/* å¸¸é‡å®šä¹‰ */ 
+/* ³£Á¿¶¨Òå */ 
 #define MAXSIZE 100
 #define DONE 1
 #define ERROR 0
@@ -14,7 +14,7 @@ struct sqList
     int length;
 };
 
-// åˆå§‹åŒ–ä¸€ä¸ªéšæœºçš„é¡ºåºè¡¨ï¼Œæœ€å¤§è¡¨é•¿100
+// ³õÊ¼»¯Ò»¸öËæ»úµÄË³Ğò±í£¬×î´ó±í³¤100
 void sqListFilling(sqList *&k,int q)
 {
     int n = 0;
@@ -30,7 +30,7 @@ void sqListFilling(sqList *&k,int q)
     }
 };
 
-// é¡ºåºè¡¨å¯¹åº”ä¸‹æ ‡å…ƒç´ è·å–
+// Ë³Ğò±í¶ÔÓ¦ÏÂ±êÔªËØ»ñÈ¡
 int findElement(sqList *k, int i)
 {
     if(i>=0 && i<=k->length){
@@ -53,24 +53,34 @@ int main()
     // }
     while (start)
     {
-        printf("*****æ¬¢è¿ä½¿ç”¨cä¸æ•°æ®ç»“æ„ç¬¬ä¸€ç« çº¿æ€§è¡¨æ“ä½œæ¼”ç¤ºç¨‹åº*****\n");
-        printf("*****è¯·é€‰æ‹©æ“ä½œ*****\n");
-        printf("*****æŒ‰ 1 :åˆ›å»ºé¡ºåºè¡¨*****\n");
-        printf("*****æŒ‰ 2 :åˆ›å»ºé¡ºåºè¡¨*****\n");
-        printf("*****æŒ‰ 9ï¼š é€€å‡ºé¡ºåºè¡¨æ“ä½œæ¼”ç¤ºç¨‹åº*****\n");
+        printf("*****»¶Ó­Ê¹ÓÃcÓëÊı¾İ½á¹¹µÚÒ»ÕÂÏßĞÔ±í²Ù×÷ÑİÊ¾³ÌĞò*****\n");
+        printf("*****ÇëÑ¡Ôñ²Ù×÷*****\n");
+        printf("*****°´ 1 :´´½¨Ë³Ğò±í*****\n");
+        printf("*****°´ 2 :´´½¨Ë³Ğò±í*****\n");
+        printf("*****°´ 9£º ÍË³öË³Ğò±í²Ù×÷ÑİÊ¾³ÌĞò*****\n");
         scanf("%d", &choice);
         switch (choice)
         {
             case 1:
-            int name;
-            printf("æ‚¨é€‰æ‹©äº†1å·æ“ä½œ:åˆ›å»ºé¡ºåºè¡¨");
-            printf("è¯·è¾“å…¥é¡ºåºè¡¨çš„è¡¨é•¿ï¼š\n");
-            scanf("%d", &name);
-            sqList *L = (sqList *)malloc(sizeof(sqList));
-            sqListFilling(L, name);
-            printf("åˆ›å»ºé¡ºåºè¡¨æˆåŠŸ");
-            system("pause");
-            break;
+                int name;
+                printf("ÄúÑ¡ÔñÁË1ºÅ²Ù×÷:´´½¨Ë³Ğò±í\n");
+                printf("ÇëÊäÈëË³Ğò±íµÄ±í³¤£º\n");
+                scanf("%d", &name);
+                sqList *L = (sqList *)malloc(sizeof(sqList));
+                sqListFilling(L, name);
+                printf("´´½¨Ë³Ğò±í³É¹¦!\n");
+                system("pause");
+                break;
+            case 9:
+                int name;
+                printf("ÄúÑ¡ÔñÁË1ºÅ²Ù×÷:´´½¨Ë³Ğò±í\n");
+                printf("ÇëÊäÈëË³Ğò±íµÄ±í³¤£º\n");
+                scanf("%d", &name);
+                sqList *L = (sqList *)malloc(sizeof(sqList));
+                sqListFilling(L, name);
+                printf("´´½¨Ë³Ğò±í³É¹¦!\n");
+                system("pause");
+                break;
         }
     }
     
