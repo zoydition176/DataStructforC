@@ -72,16 +72,9 @@ int main()
                 system("pause");
                 break;
             case 9:
-                int name;
-                printf("您选择了1号操作:创建顺序表\n");
-                printf("请输入顺序表的表长：\n");
-                scanf("%d", &name);
-                sqList *L = (sqList *)malloc(sizeof(sqList));
-                sqListFilling(L, name);
-                printf("创建顺序表成功!\n");
-                system("pause");
+                start = ERROR;
                 break;
         }
     }
-    
+    printf("演示程序结束\n");
 }
