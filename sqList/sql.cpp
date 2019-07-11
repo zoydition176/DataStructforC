@@ -45,6 +45,7 @@ int main()
 {
     int start = DONE;
     int choice;
+    sqList *L = (sqList *)malloc(sizeof(sqList));
     // sqList *L = (sqList *)malloc(sizeof(sqList));
     // sqListFilling(L,10);
     // for (int i = 0; i < L->length; i++)
@@ -66,7 +67,7 @@ int main()
                 printf("您选择了1号操作:创建顺序表\n");
                 printf("请输入顺序表的表长：\n");
                 scanf("%d", &name);
-                sqList *L = (sqList *)malloc(sizeof(sqList));
+                // sqList *L = (sqList *)malloc(sizeof(sqList));
                 sqListFilling(L, name);
                 printf("创建顺序表成功!\n");
                 system("pause");
