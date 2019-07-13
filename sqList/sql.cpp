@@ -9,7 +9,7 @@
 
 struct sqList
 {
-    // int *element;
+    struct sqList *address;
     int data[MAXSIZE];
     int length;
 };
@@ -45,13 +45,8 @@ int main()
 {
     int start = DONE;
     int choice;
-    sqList *L = (sqList *)malloc(sizeof(sqList));
-    // sqList *L = (sqList *)malloc(sizeof(sqList));
-    // sqListFilling(L,10);
-    // for (int i = 0; i < L->length; i++)
-    // {
-    //     printf("%d\n", L->data[i]);
-    // }
+    sqList *q = (sqList *)malloc(sizeof(sqList));
+    q->address = q;
     while (start)
     {
         printf("*****欢迎使用c与数据结构第一章线性表操作演示程序*****\n");
@@ -68,10 +63,10 @@ int main()
                 printf("请输入顺序表的表长：\n");
                 scanf("%d", &name);
                 // sqList *L = (sqList *)malloc(sizeof(sqList));
-                sqListFilling(L, name);       
-                for (int i=0;i<=L->length;i++)
+                sqListFilling(q, name);       
+                for (int i=0;i<=q->length;i++)
                 {
-                    printf("| %d |", L->data[i]);
+                    printf(" %d ||", q->data[i]);
                 };
                 printf("长度为 %d 的顺序表初始化成功!\n", name);
                 system("pause");
@@ -81,7 +76,7 @@ int main()
                 printf("您选择了2号操作:获取顺序表元素\n");
                 printf("请输入下标：\n");
                 scanf("%d", &num);
-                res = findElement(L, num);
+                res = findElement(q, num);
                 if (res)
                 {
                     printf("下标%d的元素为：%d \n", num, res);
@@ -95,5 +90,5 @@ int main()
                 break;
         }
     }
-    printf("演示程序结束\n");
+    printf("演示程序结束！\n");
 }
