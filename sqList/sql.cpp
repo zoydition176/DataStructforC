@@ -17,8 +17,10 @@ struct sqList
 // 初始化一个随机的顺序表，最大表长100
 void sqListFilling(sqList *&k,int q)
 {
-    int n = 0;
+    // k = (sqList *)malloc(sizeof(sqList));
+    k->address = k;
     k->length = q;
+    int n = 0;
     srand((unsigned)time(NULL));
     if (q > 0)
     {
@@ -46,7 +48,8 @@ int main()
     int start = DONE;
     int choice;
     sqList *q = (sqList *)malloc(sizeof(sqList));
-    q->address = q;
+    // sqList *q = (sqList *)malloc(sizeof(sqList));
+    // q->address = q;
     while (start)
     {
         printf("*****欢迎使用c与数据结构第一章线性表操作演示程序*****\n");
@@ -68,6 +71,7 @@ int main()
                 {
                     printf(" %d ||", q->data[i]);
                 };
+                printf("长度为 %d 成功!\n", q->address);
                 printf("长度为 %d 的顺序表初始化成功!\n", name);
                 system("pause");
                 break;
