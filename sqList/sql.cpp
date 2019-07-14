@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 /* 常量定义 */ 
 #define MAXSIZE 100
@@ -18,10 +19,11 @@ struct sqList
 void sqListFilling(sqList *&k,int q)
 {
     // k = (sqList *)malloc(sizeof(sqList));
+    int n = 0;
     k->address = k;
     k->length = q;
-    int n = 0;
-    srand((unsigned)time(NULL));
+    memset(k->data, 0, sizeof(k->data));//清空原有数组
+    srand((unsigned)time(NULL));// 初始化时间种子
     if (q > 0)
     {
         for (int i = 0; i < k->length; i++)
@@ -71,7 +73,7 @@ int main()
                 {
                     printf(" %d ||", q->data[i]);
                 };
-                printf("长度为 %d 成功!\n", q->address);
+                // printf("长度为 %d 成功!\n", q->address);
                 printf("长度为 %d 的顺序表初始化成功!\n", name);
                 system("pause");
                 break;
