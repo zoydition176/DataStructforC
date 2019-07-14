@@ -18,11 +18,10 @@ struct sqList
 // 初始化一个随机的顺序表，最大表长100
 void sqListFilling(sqList *&k,int q)
 {
-    // k = (sqList *)malloc(sizeof(sqList));
     int n = 0;
     k->address = k;
     k->length = q;
-    memset(k->data, 0, sizeof(k->data));//清空原有数组
+    memset(k->data, 0, sizeof(k->data));// 清空原有数组
     srand((unsigned)time(NULL));// 初始化时间种子
     if (q > 0)
     {
