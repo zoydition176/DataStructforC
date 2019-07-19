@@ -32,7 +32,7 @@ void sqListFilling(sqList *&k,int q)
         }
     }
 };
-
+// 显示一个顺序表
 // 顺序表对应下标元素获取
 int findElement(sqList *k, int i)
 {
