@@ -33,7 +33,18 @@ void sqListFilling(sqList *&k,int q)
     }
 };
 // 显示一个顺序表
-int showsqlist(sqList *&k) {
+int showsqlist(sqList *k) {
+    if (k->address == k)
+    {
+        for (int i = 0; i <= k->length; i++)
+        {
+            printf(" %d ||", k->data[i]);
+        };
+        // printf("顺序表操作成功！");
+        return 1;
+    }else{
+        return 0;
+    }
     
 }
 // 顺序表对应下标元素获取
@@ -71,12 +82,18 @@ int main()
                 scanf("%d", &name);
                 // sqList *L = (sqList *)malloc(sizeof(sqList));
                 sqListFilling(q, name);       
-                for (int i=0;i<=q->length;i++)
-                {
-                    printf(" %d ||", q->data[i]);
-                };
+                // for (int i=0;i<=q->length;i++)
+                // {
+                //     printf(" %d ||", q->data[i]);
+                // };
                 // printf("长度为 %d 成功!\n", q->address);
-                printf("长度为 %d 的顺序表初始化成功!\n", name);
+                // printf("长度为 %d 的顺序表初始化成功!\n", name);
+                if (showsqlist(q))
+                {
+                    printf("长度为 %d 的顺序表初始化成功!\n", name);
+                }else{
+                    printf("顺序表操作失败!\n");
+                }
                 system("pause");
                 break;
             case 2:
@@ -91,6 +108,7 @@ int main()
                 }else{
                     printf("输入值不合法!\n");
                 }
+                showsqlist(q);
                 system("pause");
                 break;
             case 9:
