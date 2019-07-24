@@ -1,18 +1,21 @@
 #include <stdio.h>
-#include <stdlib.h>
-/* 常量定义 */
 #define MAXSIZE 100
 #define DONE 1
 #define ERROR 0
 
-/*顺序栈定义*/
-struct sqstack
+typedef struct sqstk
 {
     int data[MAXSIZE];
-    int top;
+    int length;
+} sqstk;
+
+// cpp特性是引用类型可以当函数形参传递，c语言不支持，只能用指针做形参。调用的时候用引用型做实参
+void sqs(sqstk *st)
+{
+    printf("演示程序结束！\n");
 };
 
 int main()
 {
-    
+    sqstk a;
 }
