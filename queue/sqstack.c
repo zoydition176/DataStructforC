@@ -18,4 +18,5 @@ void sqs(sqstk *st)
 int main()
 {
     sqstk a;
+    a.length = 0;
 }
