@@ -18,5 +18,6 @@ void sqs(sqstk *st)
 int main()
 {
     sqstk a;
+    // 定义一个栈
     a.length = 0;
 }
