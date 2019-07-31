@@ -3,16 +3,21 @@
 #define DONE 1
 #define ERROR 0
 
+// 顺序栈
 typedef struct sqstk
 {
     int data[MAXSIZE];
-    int length;
+    int top;
 } sqstk;
 
 // cpp特性是引用类型可以当函数形参传递，c语言不支持，只能用指针做形参。调用的时候用引用型做实参
-void sqs(sqstk *st)
+void initsqs(sqstk *st)
 {
-    printf("");
+    st.top=-1;
+};
+
+int initSqk(){
+
 };
 
 int main()
