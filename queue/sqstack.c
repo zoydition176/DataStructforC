@@ -18,13 +18,13 @@ void initsqs(sqstk *st)
 
 // 判断栈的状态,普通类型的参数
 int isEmpty(sqstk st){
-    if(st.top == 0){
+    if(st.top == 0){//栈空
         return 0;
     }
-    else if (st.top == MAXSIZE)
+    else if (st.top == MAXSIZE)//栈满
     {
         return 2;
-    }else{
+    }else{//普通状态
         return 1;
     }
 };
@@ -42,8 +42,21 @@ int pushStack(sqstk *st,int n)
     }
 }
 
-
-
+// 出栈，实参为引用型，返回出栈的数据
+int pushStack(sqstk *st,int *m)
+{
+    int k = isEmpty(*st);
+    if (k == 0)//栈空不能出栈
+    {
+        return 0;
+    }
+    else
+    {
+        *m=st->data[st->top];
+        (st->top)--;
+        return 1;
+    }
+}
 
 int main()
 {
