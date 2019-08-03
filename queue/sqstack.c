@@ -63,4 +63,5 @@ int main()
     sqstk a;
     // 定义一个栈
     a.top = 0;
+    pushStack(&a,1);
 }
