@@ -11,6 +11,10 @@ typedef struct sqQueue
     int rear;
 } sqQueue;
 
+int initQueue(){
+    
+}
+
 int main()
 {
     sqQueue a;
