@@ -11,8 +11,9 @@ typedef struct sqQueue
     int rear;
 } sqQueue;
 
+// 初始化顺序队
 int initQueue(){
-    
+
 }
 
 int main()
