@@ -12,8 +12,15 @@ typedef struct sqQueue
 } sqQueue;
 
 // 初始化顺序队
-int initQueue(){
+int initQueue(sqQueue *d)
+{
+    d->front = d->rear = 0;
+}
 
+// 判断顺序队是否为空
+int isQueueEmpty(sqQueue d)
+{
+    d.front==d.rear;
 }
 
 int main()
