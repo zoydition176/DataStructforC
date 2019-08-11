@@ -20,7 +20,18 @@ int initQueue(sqQueue *d)
 // 判断顺序队是否为空
 int isQueueEmpty(sqQueue d)
 {
-    d.front==d.rear;
+    if (d.front == d.rear)
+    {
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+//
+int initQueue(sqQueue *d)
+{
+    d->front = d->rear = 0;
 }
 
 int main()
