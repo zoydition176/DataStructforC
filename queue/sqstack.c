@@ -28,10 +28,12 @@ int isQueueEmpty(sqQueue d)
     }
 }
 
-//
-int initQueue(sqQueue *d)
+// 出队
+int enQueue(sqQueue *d)
 {
-    d->front = d->rear = 0;
+    if(d->rear == d->front){
+        return 0;
+    }
 }
 
 int main()
