@@ -21,7 +21,7 @@ int isEmpty(sqstk st)
 {
     if (st.top == 0)
     { //栈空
-        return 0;
+        return 1;
     }
     else if (st.top == MAXSIZE) //栈满
     {
@@ -29,7 +29,7 @@ int isEmpty(sqstk st)
     }
     else
     { //普通状态
-        return 1;
+        return 0;
     }
 };
 
