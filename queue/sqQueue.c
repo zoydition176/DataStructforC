@@ -36,6 +36,7 @@ int enQueue(sqQueue *d)
     }
 }
 // 入队
+int
 
 int main()
 {
