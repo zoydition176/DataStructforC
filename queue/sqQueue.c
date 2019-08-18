@@ -31,12 +31,15 @@ int isQueueEmpty(sqQueue d)
 // 出队
 int enQueue(sqQueue *d)
 {
-    if(d->rear == d->front){//队满无法出队
+    if(d->rear == d->front){//队空无法出队
         return 0;
     }
 }
 // 入队
-int
+int outQueue(sqQueue *d)
+{
+    
+}
 
 int main()
 {
