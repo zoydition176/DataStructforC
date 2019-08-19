@@ -38,7 +38,10 @@ int enQueue(sqQueue *d)
 // 入队
 int outQueue(sqQueue *d)
 {
-    
+    if ((d->rear + 1) % MAXSIZE==d->front)//队满无法入队
+    {
+        return 0;
+    }
 }
 
 int main()
