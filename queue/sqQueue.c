@@ -36,12 +36,19 @@ int enQueue(sqQueue *d)
     }
 }
 // 入队
-int outQueue(sqQueue *d)
+int outQueue(sqQueue *d,int n)
 {
-    if ((d->rear + 1) % MAXSIZE==d->front)//队满无法入队
+    if ((d->rear + 1) % MAXSIZE == d->front)//队满无法入队
     {
         return 0;
+    }else
+    {
+        /* code */
+        d->rear = (d->rear + 1)% MAXSIZE;
+        (d->data)[d->rear] == n;
+        return 1;
     }
+    
 }
 
 int main()
