@@ -29,10 +29,13 @@ int isQueueEmpty(sqQueue d)
 }
 
 // 出队
-int enQueue(sqQueue *d)
+int enQueue(sqQueue *d,int *n)
 {
     if(d->rear == d->front){//队空无法出队
         return 0;
+    }else{
+        d->front = (d->front + 1) % MAXSIZE;
+        n = d->data[d->front];
     }
 }
 // 入队
