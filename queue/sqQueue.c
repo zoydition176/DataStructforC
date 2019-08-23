@@ -56,7 +56,8 @@ int outQueue(sqQueue *d,int n)
 
 int main()
 {
-    sqQueue a;
+    sqQueue *a = (sqQueue *)malloc(sizeof(sqQueue));
+    initQueue(&a)//我叼你妈的总算对了
     // 定义一个栈
     
 }
