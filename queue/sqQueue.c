@@ -15,6 +15,7 @@ typedef struct sqQueue
 int initQueue(sqQueue *d)
 {
     d->front = d->rear = 0;
+    return 1;
 }
 
 // 判断顺序队是否为空
