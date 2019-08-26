@@ -37,7 +37,7 @@ int enQueue(sqQueue *d,int *n)
         return 0;
     }else{
         d->front = (d->front + 1) % MAXSIZE;
-        n = d->data[d->front];
+        *n = d->data[d->front];
         return 1;
     }
 }
@@ -60,7 +60,7 @@ int outQueue(sqQueue *d,int n)
 int main()
 {
     sqQueue *a = (sqQueue *)malloc(sizeof(sqQueue));
-    initQueue(&a); //我叼你妈的总算对了
+    initQueue(a); //我叼你妈的总算对了
     // 定义一个栈
     // isQueueEmpty(*a);
 }
