@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #define MAXSIZE 100
 #define DONE 1
 #define ERROR 0
@@ -37,6 +38,7 @@ int enQueue(sqQueue *d,int *n)
     }else{
         d->front = (d->front + 1) % MAXSIZE;
         n = d->data[d->front];
+        return 1;
     }
 }
 // 入队
@@ -58,7 +60,7 @@ int outQueue(sqQueue *d,int n)
 int main()
 {
     sqQueue *a = (sqQueue *)malloc(sizeof(sqQueue));
-    initQueue(&a)//我叼你妈的总算对了
+    initQueue(&a); //我叼你妈的总算对了
     // 定义一个栈
-    
+    // isQueueEmpty(*a);
 }
