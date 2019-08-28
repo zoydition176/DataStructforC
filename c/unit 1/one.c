@@ -6,8 +6,5 @@
 
 int main()
 {
-    sqQueue *a = (sqQueue *)malloc(sizeof(sqQueue));
-    initQueue(a); //我叼你妈的总算对了
-    // 定义一个栈
-    isQueueEmpty(*a);
+    
 }
