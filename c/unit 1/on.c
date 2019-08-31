@@ -3,12 +3,16 @@
 #define MAXSIZE 100
 #define DONE 1
 #define ERROR 0
-// è®¡ç®—é˜¶ä¹˜
-int factorial(int n){
+// ½×³Ë
+int factorial(int n)
+{
     int res = 1;
-    if(n == 0){
+    if (n == 0)
+    {
         return ERROR;
-    }else{
+    }
+    else
+    {
         for (int i = 1; i <= n; i++)
         {
             res = res * i;
@@ -20,13 +24,15 @@ int factorial(int n){
 int main()
 {
     int num;
-    printf("1.ã€Šè®¡ç®—é˜¶ä¹˜ã€‹\nè¯·è¾“å…¥ä¸€ä¸ªå°äºŽ30çš„æ•°å­—ï¼š");
+    printf("1.¼ÆËã½×³Ë\nÇëÊäÈëÒ»¸öÊý£º");
     scanf("%d", &num);
     if (factorial(num))
     {
-        printf("ç¨‹åºæ‰§è¡ŒæˆåŠŸï¼è®¡ç®—ç»“æžœä¸º:%d\n", factorial(num));
-    }else{
-        printf("å‚æ•°é”™è¯¯");
+        printf("½á¹ûÎª:%d\n", factorial(num));
+    }
+    else
+    {
+        printf("²ÎÊý´íÎó");
     }
     system("pause");
 };
