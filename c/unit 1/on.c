@@ -13,26 +13,52 @@ int factorial(int n)
     }
     else
     {
+        /*
         for (int i = 1; i <= n; i++)
         {
             res = res * i;
         }
         return res;
+        */
+       while (n)
+       {
+           res = res * n;
+           n--;
+       }
+       return res;
     }
 }
 
 int main()
 {
-    int num;
-    printf("1.计算阶乘\n请输入一个数：");
-    scanf("%d", &num);
-    if (factorial(num))
+    int start = DONE;
+    int choice;
+    while (start)
     {
-        printf("结果为:%d\n", factorial(num));
+        printf("请输入题号：\n");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 4:{
+            int num;
+            printf("1.计算阶乘\n请输入一个数：");
+            scanf("%d", &num);
+            if (factorial(num))
+            {
+                printf("结果为:%d\n", factorial(num));
+            }
+            else
+            {
+                printf("参数错误!\n");
+            }
+            system("pause");
+        }
+            break;
+        default:
+            start = ERROR;
+            break;
+        }
     }
-    else
-    {
-        printf("参数错误");
-    }
-    system("pause");
+
+    printf("演示程序结束！\n");
 };
