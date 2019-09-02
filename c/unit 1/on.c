@@ -33,15 +33,22 @@ int factorial(int n)
 }
 // 斐波那契数列
 int fib(int n){
-    int q,p,k=0;
+    // 常规方法
+    int q=1;
+    int p = 0;
+    int k = 0;
     if(n<=0){
         return ERROR;
     }else{
-        for(int i=0;i<n;i++){
-            
+        for(int i=1;i<n;i++){
+            k = q;
+            q = k + p;
+            p = k;
         }
-        
+        return q;  
     }
+
+    // 递归方法
 }
 
 int main()
@@ -69,6 +76,22 @@ int main()
             system("pause");
         }
             break;
+        case 5:
+        {
+            int num;
+            printf("1.计算斐波那契数列第n项\n请输入项数：");
+            scanf("%d", &num);
+            if (fib(num))
+            {
+                printf("结果为:%d\n", fib(num));
+            }
+            else
+            {
+                printf("参数错误!\n");
+            }
+            system("pause");
+        }
+        break;
         default:
             start = ERROR;
             break;
