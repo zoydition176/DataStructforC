@@ -13,6 +13,7 @@ int factorial(int n)
     }
     else
     {
+        // 1
         /*
         for (int i = 1; i <= n; i++)
         {
@@ -20,12 +21,26 @@ int factorial(int n)
         }
         return res;
         */
-       while (n)
-       {
-           res = res * n;
-           n--;
-       }
-       return res;
+       
+        // 2
+        while (n)
+        {
+            res = res * n;
+            n--;
+        }
+        return res;
+    }
+}
+// ì³²¨ÄÇÆõÊýÁÐ
+int fib(int n){
+    int q,p,k=0;
+    if(n<=0){
+        return ERROR;
+    }else{
+        for(int i=0;i<n;i++){
+            
+        }
+        
     }
 }
 
