@@ -51,6 +51,60 @@ int fib(int n){
     // 递归方法
 }
 
+// 台阶问题
+int ladder(){
+    int n = 7;
+    while (n)
+    {
+        if((n%2==1)&&(n%3==2)&&(n%5==4)&&(n%6==5)&&(n%7==0)){
+            break;
+        }else{
+            n=n+7;
+        } 
+    }
+    return n;
+}
+
+// 货币问题
+int currency(){
+    int n = 0;
+    int x;
+    int y;
+    int z;
+    int arr[100][3];
+    for(y=9;y>=0;y--){
+        x = 10-y;
+        for(z=0;z<x;z++){
+            if(z*5+(x-z)*1+y*2==18){
+                n=n+1;
+                arr[n][0] = x - z;
+                arr[n][1] = y;
+                arr[n][2] = z;
+            }
+        }
+    }
+    // return arr[100][3];
+    return n;
+}
+
+// 勾股数输出
+void Pythagorean(){
+    int x;
+    int y;
+    int z;
+    int n = 0;
+    for(z=5;z<=100;z++){
+        for(y=4;y<z;y++){
+            for(x=3;x<=y;x++){
+                if(x*x+y*y==z*z){
+                    n = n+1;
+                    printf("第%d组勾股数为%d,%d,%d\n",n,x,y,z);
+                }
+            }
+        }
+    }
+}
+
 int main()
 {
     int start = DONE;
@@ -63,7 +117,7 @@ int main()
         {
         case 4:{
             int num;
-            printf("1.计算阶乘\n请输入一个数：");
+            printf("4.计算阶乘\n请输入一个数：");
             scanf("%d", &num);
             if (factorial(num))
             {
@@ -79,7 +133,7 @@ int main()
         case 5:
         {
             int num;
-            printf("1.计算斐波那契数列第n项\n请输入项数：");
+            printf("5.计算斐波那契数列第n项\n请输入项数：");
             scanf("%d", &num);
             if (fib(num))
             {
@@ -89,6 +143,27 @@ int main()
             {
                 printf("参数错误!\n");
             }
+            system("pause");
+        }
+        break;
+        case 6:
+        {
+            printf("6.计算台阶数\n");
+            printf("结果为:%d\n", ladder());
+            system("pause");
+        }
+        break;
+        case 7:
+        {
+            printf("7.货币凑钱问题\n");
+            printf("结果为:%d\n", currency());
+            system("pause");
+        }
+        break;
+        case 8:
+        {
+            printf("8.勾股数输出问题\n");
+            Pythagorean();
             system("pause");
         }
         break;
