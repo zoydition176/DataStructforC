@@ -162,7 +162,7 @@ int main()
         break;
         case 8:
         {
-            printf("8.勾股数输出问题\n");
+            printf("8.勾股数输出问题\n输出结果:\n");
             Pythagorean();
             system("pause");
         }
