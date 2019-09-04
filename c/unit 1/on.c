@@ -105,6 +105,11 @@ void Pythagorean(){
     }
 }
 
+// ∞Ÿº¶Œ Ã‚
+void CountChicken(){
+    
+}
+
 int main()
 {
     int start = DONE;
