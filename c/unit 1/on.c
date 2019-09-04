@@ -107,7 +107,22 @@ void Pythagorean(){
 
 // 百鸡问题
 void CountChicken(){
-    
+    int x;
+    int y;
+    int z;
+    int n = 0;
+    for(z=20;z>=0;z--){
+        y = 100-z;
+        for(x=0;x<y;x++){
+            if(x*9+z*15+(y-x)*1==300){
+                n = n+1;
+                printf("解%d:\n",n);
+                printf("公鸡%d只\n母鸡%d只\n小鸡%d只\n",z,x,y-x);
+                printf("----------------------------\n");
+                break;
+            }
+        }
+    }
 }
 
 int main()
@@ -116,7 +131,7 @@ int main()
     int choice;
     while (start)
     {
-        printf("请输入题号：\n");
+        printf("请输入题号（4~9）：\n");
         scanf("%d", &choice);
         switch (choice)
         {
@@ -169,6 +184,13 @@ int main()
         {
             printf("8.勾股数输出问题\n输出结果:\n");
             Pythagorean();
+            system("pause");
+        }
+        break;
+        case 9:
+        {
+            printf("9.百鸡问题\n输出结果:\n");
+            CountChicken();
             system("pause");
         }
         break;
