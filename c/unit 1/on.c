@@ -149,7 +149,7 @@ int main()
             }
             system("pause");
         }
-            break;
+        break;
         case 5:
         {
             int num;
