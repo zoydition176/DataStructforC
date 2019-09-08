@@ -3,9 +3,7 @@
 #define MAXSIZE 100
 #define DONE 1
 #define ERROR 0
-extern void A();
-int main()
-{
-    A();
-    return 0;
-};
+
+void A(){
+    printf("全局外部函数");
+}
