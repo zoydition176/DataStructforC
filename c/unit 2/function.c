@@ -4,8 +4,15 @@
 #define DONE 1
 #define ERROR 0
 
-void reverse(){
-    
+typedef struct sqList
+{
+    int data[MAXSIZE];
+    int length;
+} sqList;
+
+void reverse(sqList *k)
+{
+
 }
 
 int main()
