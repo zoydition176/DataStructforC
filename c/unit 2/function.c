@@ -14,8 +14,8 @@ void reverse(sqList *q)
 {
     // printf("%d,", q->data[0]);
     int n;
-    for(int i=0;i<=(q->length)/2;i++){
-        n = q->data[q->length-i];
+    for(int i=0;i<(q->length)/2;i++){
+        n = q->data[q->length-1-i];
         q->data[q->length-i] = q->data[i];
         q->data[i] = n;
         printf("%d,", q->data[i]);
