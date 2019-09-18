@@ -12,7 +12,7 @@ typedef struct sqList
 
 void reverse(sqList *q)// ÄæÐòÊä³ö
 {
-    int n;
+    static int n;
     int k = q->length-1;
     for (int i = 0; i < (q->length)/2; i++)
     {
