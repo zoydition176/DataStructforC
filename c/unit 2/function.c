@@ -10,7 +10,7 @@ typedef struct sqList
     int length;
 } sqList;
 
-void reverse(sqList *q)
+void reverse(sqList *q)// ÄæÐòÊä³ö
 {
     int n;
     int k = q->length-1;
