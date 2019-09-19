@@ -4,6 +4,7 @@
 #define DONE 1
 #define ERROR 0
 
-void A(){
-    printf("全局外部函数");
+int main(){
+    int a;
+    scanf("%d",&a);
 }

@@ -22,7 +22,7 @@ void reverse(sqList *q)// ÄæĞòÊä³ö
         q->data[i] = n;
     }
     for(int j = 0;j<q->length;j++){
-        printf("%d,", q->data[j]);
+        printf("%d  ", q->data[j]);
     }
 }
 
@@ -33,7 +33,7 @@ int main()
     for (int i = 0; i < k->length; i++)
     {
         k->data[i] = i;
-        printf("%d,", k->data[i]);
+        printf("%d  ", k->data[i]);
     }
     printf("\n");
     reverse(k);
