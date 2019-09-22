@@ -12,7 +12,9 @@ typedef struct sqlist
 } sqlist;
 
 // 从数组中选出最大和最小的两个数
-void initArray(){}
+void initArray(sqlist *q){
+
+}
 
 int main(){
     int a;
