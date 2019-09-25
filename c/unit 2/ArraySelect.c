@@ -12,8 +12,10 @@ typedef struct sqlist
 } sqlist;
 
 // 从数组中选出最大和最小的两个数
-void initArray(sqlist *q){
-    int n;
+
+// 初始化顺序表
+void initArray(sqlist *q,int n){
+    int a;
 }
 
 int main(){
