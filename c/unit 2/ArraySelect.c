@@ -25,6 +25,8 @@ int main()
     sqlist *a = (sqlist *)malloc(sizeof(sqlist));
     initArray(a, 10);
     // printfSql(*a);
+    reverse(a);
+    printfSql(*a);
 }
 // 从数组中选出最大和最小的两个数
 
@@ -77,8 +79,8 @@ void reverse(sqlist *q)
         q->data[k - i] = q->data[i];
         q->data[i] = n;
     }
-    for (int j = 0; j < q->length; j++)
-    {
-        printf("%d  ", q->data[j]);
-    }
+    // for (int j = 0; j < q->length; j++)
+    // {
+    //     printf("%d  ", q->data[j]);
+    // }
 }
