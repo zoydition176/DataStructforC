@@ -6,15 +6,17 @@
 #define DONE 1
 #define ERROR 0
 
+/*将函数声明和结构体声明分开写上面为了防止一些调用问题而多浪费时间排序*/
+
 // 线性表
 typedef struct sqlist
 {
     int data[MAXSIZE];
     int length;
 } sqlist;
-
 void printfSql(sqlist q);
 void initArray(sqlist *q, int n);
+void reverse(sqlist *q);
 
 int main()
 {
@@ -63,3 +65,20 @@ void printfSql(sqlist q)
     }
 }
 
+// 逆序输出
+void reverse(sqlist *q) 
+{
+    static int n;
+    int k = q->length - 1;
+    for (int i = 0; i < (q->length) / 2; i++)
+    {
+        /* code */
+        n = q->data[k - i];
+        q->data[k - i] = q->data[i];
+        q->data[i] = n;
+    }
+    for (int j = 0; j < q->length; j++)
+    {
+        printf("%d  ", q->data[j]);
+    }
+}
