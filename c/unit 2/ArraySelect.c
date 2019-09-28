@@ -79,8 +79,9 @@ void reverse(sqlist *q)
         q->data[k - i] = q->data[i];
         q->data[i] = n;
     }
-    // for (int j = 0; j < q->length; j++)
-    // {
-    //     printf("%d  ", q->data[j]);
-    // }
+}
+
+// 调用函数自变量空间不同
+void testVar(){
+
 }
