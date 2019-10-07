@@ -83,7 +83,7 @@ void reverse(sqlist *q)
     }
 }
 
-// 调用函数自变量空间不同
+// 调用函数自变量空间不同，原理是调用函数的时候保持函数的变量不出栈
 int testVar(int n){
     int a = 0;
     if(n == 0){
