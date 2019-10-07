@@ -17,6 +17,7 @@ typedef struct sqlist
 void printfSql(sqlist q);
 void initArray(sqlist *q, int n);
 void reverse(sqlist *q);
+int testVar();
 
 int main()
 {
@@ -27,6 +28,7 @@ int main()
     // printfSql(*a);
     reverse(a);
     printfSql(*a);
+    testVar(5);
 }
 // 从数组中选出最大和最小的两个数
 
@@ -82,6 +84,13 @@ void reverse(sqlist *q)
 }
 
 // 调用函数自变量空间不同
-void testVar(){
-
+int testVar(int n){
+    int a = 0;
+    if(n == 0){
+        return n;
+    }else{   
+        printf("a in %x,a is %d\n", &a, a);
+        n--;
+        testVar(n);
+    }
 }
