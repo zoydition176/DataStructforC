@@ -6,9 +6,9 @@
 #define DONE 1
 #define ERROR 0
 
-/*å°†å‡½æ•°å£°æ˜å’Œç»“æ„ä½“å£°æ˜åˆ†å¼€å†™ä¸Šé¢ä¸ºäº†é˜²æ­¢ä¸€äº›è°ƒç”¨é—®é¢˜è€Œå¤šæµªè´¹æ—¶é—´æ’åº*/
+/*½«º¯ÊıÉùÃ÷ºÍ½á¹¹ÌåÉùÃ÷·Ö¿ªĞ´ÉÏÃæÎªÁË·ÀÖ¹Ò»Ğ©µ÷ÓÃÎÊÌâ¶ø¶àÀË·ÑÊ±¼äÅÅĞò*/
 
-// çº¿æ€§è¡¨
+// ÏßĞÔ±í
 typedef struct sqlist
 {
     int data[MAXSIZE];
@@ -17,6 +17,7 @@ typedef struct sqlist
 void printfSql(sqlist q);
 void initArray(sqlist *q, int n);
 void reverse(sqlist *q);
+void findelement(sqlist q);
 int testVar();
 
 int main()
@@ -29,16 +30,16 @@ int main()
     reverse(a);
     printfSql(*a);
     testVar(5);
+    findelement(*a);
 }
-// ä»æ•°ç»„ä¸­é€‰å‡ºæœ€å¤§å’Œæœ€å°çš„ä¸¤ä¸ªæ•°
 
-// åˆå§‹åŒ–é¡ºåºè¡¨
+// ³õÊ¼»¯Ë³Ğò±í
 void initArray(sqlist *q, int n)
 {
     int a = 0;
     q->length = n;
-    memset(q->data, 0, sizeof(q->data)); // æ¸…ç©ºåŸæœ‰æ•°ç»„
-    srand((unsigned)time(NULL));         // åˆå§‹åŒ–æ—¶é—´ç§å­
+    memset(q->data, 0, sizeof(q->data)); // Çå¿ÕÔ­ÓĞÊı×é
+    srand((unsigned)time(NULL));         // ³õÊ¼»¯Ê±¼äÖÖ×Ó
     if (n > 0)
     {
         for (int i = 0; i < q->length; i++)
@@ -50,7 +51,7 @@ void initArray(sqlist *q, int n)
     printfSql(*q);
 }
 
-// æ‰“å°é¡ºåºè¡¨
+// ´òÓ¡Ë³Ğò±í
 void printfSql(sqlist q)
 {
     if (q.length > 0)
@@ -69,7 +70,7 @@ void printfSql(sqlist q)
     }
 }
 
-// é€†åºè¾“å‡º
+// ÄæĞòÊä³ö
 void reverse(sqlist *q) 
 {
     static int n;
@@ -82,8 +83,19 @@ void reverse(sqlist *q)
         q->data[i] = n;
     }
 }
+// ´ÓÊı×éÖĞÑ¡³ö×î´óºÍ×îĞ¡µÄÁ½¸öÊı
+void findelement(sqlist q)
+{
+    static int max;
+    int min = q.data[0];
+    for(int i=0;i<q.length;i++){
+        max = q.data[i] > max ? q.data[i] : max;
+        min = q.data[i] < min ? q.data[i] : min;
+    }
+    printf("Êı×é×î´óÖµÎª:%d,Êı×é×îĞ¡ÖµÎª:%d\n",max,min);
+}
 
-// è°ƒç”¨å‡½æ•°è‡ªå˜é‡ç©ºé—´ä¸åŒï¼ŒåŸç†æ˜¯è°ƒç”¨å‡½æ•°çš„æ—¶å€™ä¿æŒå‡½æ•°çš„å˜é‡ä¸å‡ºæ ˆ
+// µ÷ÓÃº¯Êı×Ô±äÁ¿¿Õ¼ä²»Í¬£¬Ô­ÀíÊÇµ÷ÓÃº¯ÊıµÄÊ±ºò±£³Öº¯ÊıµÄ±äÁ¿²»³öÕ»
 int testVar(int n){
     int a = 0;
     if(n == 0){
@@ -94,3 +106,9 @@ int testVar(int n){
         testVar(n);
     }
 }
+
+/*
+º¯ÊıĞÎ²ÎÖ»ÄÜÊÇ×Ô¶¯¾Ö²¿±äÁ¿£¬²»ÄÜÊÇ¾²Ì¬¾Ö²¿±äÁ¿£¬ÎªÊ²Ã´£¿
+´ğ£ºÒòÎª¾²Ì¬¾Ö²¿±äÁ¿µÄÉúÃüÖÜÆÚÊÇ´Ó³õÊ¼»¯µ½Õû¸ö³ÌĞò½áÊø£¬¾²Ì¬¾Ö²¿±äÁ¿ÔÚÄÚ´æÖĞµÄ¾²Ì¬´æ´¢Çø¡£
+µ±º¯Êı·´¸´µ÷ÓÃ¶øÊµ²ÎÖØĞÂ¸ø×÷ÎªĞÎ²ÎµÄ¾²Ì¬¾Ö²¿±äÁ¿³õÊ¼»¯Ê±£¬Ö÷³ÌĞòÃ»ÓĞ½áÊø£¬ÎŞ·¨³õÊ¼»¯ĞÎ²Î¡£
+*/
