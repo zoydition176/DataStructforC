@@ -18,6 +18,7 @@ void printfSql(sqlist q);
 void initArray(sqlist *q, int n);
 void reverse(sqlist *q);
 void findelement(sqlist q);
+void findmiddle(sqlist q);
 int testVar();
 
 int main()
@@ -26,11 +27,11 @@ int main()
     // scanf("%d",&a);
     sqlist *a = (sqlist *)malloc(sizeof(sqlist));
     initArray(a, 10);
-    // printfSql(*a);
     reverse(a);
     printfSql(*a);
-    testVar(5);
     findelement(*a);
+    testVar(5);
+    findmiddle(*a);
 }
 
 // 初始化顺序表
@@ -96,8 +97,31 @@ void findelement(sqlist q)
 }
 
 // 求数组中数值居中的数
-void findmiddle(sqlist q) {
-    
+void findmiddle(sqlist q) 
+{
+    int arr[q.length];
+    int p;
+    for(int i = 0;i<q.length;i++){
+        arr[i] = q.data[i];
+    }
+    for(int j = 0;j<q.length;j++){//冒泡排序
+        for(int x =0;x<q.length-j-1;x++){
+            if(arr[x]>=arr[x+1]){
+                p = arr[x];
+                arr[x] = arr[x+1];
+                arr[x+1] = p;
+            }
+        }
+    }
+    printf("排序结果为：\n");
+    for(int y = 0;y<q.length;y++){
+        printf("%d ",arr[y]);
+    }
+    if((q.length)%2==0){
+        printf("中位数为：%d", arr[q.length/2]);
+    }else{
+        printf("中位数为：%d",arr[(q.length+1)/2]);
+    }  
 }
 
 // 调用函数自变量空间不同，原理是调用函数的时候保持函数的变量不出栈
