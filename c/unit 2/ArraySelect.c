@@ -19,6 +19,7 @@ void initArray(sqlist *q, int n);
 void reverse(sqlist *q);
 void findelement(sqlist q);
 void findmiddle(sqlist q);
+void selectElement();
 int testVar();
 
 int main()
@@ -32,6 +33,7 @@ int main()
     findelement(*a);
     testVar(5);
     findmiddle(*a);
+    selectElement();
 }
 
 // 初始化顺序表
@@ -118,10 +120,25 @@ void findmiddle(sqlist q)
         printf("%d ",arr[y]);
     }
     if((q.length)%2==0){
-        printf("中位数为：%d", arr[q.length/2]);
+        printf("中位数为：%d\n", arr[q.length/2]);
     }else{
-        printf("中位数为：%d",arr[(q.length+1)/2]);
+        printf("中位数为：%d\n",arr[(q.length+1)/2]);
     }  
+}
+
+// 挑选出百位数值大于十位与个位数值之和的元素
+void selectElement(){
+    int arr[9];
+    int n = 0;
+    int a, b;
+    srand((unsigned)time(NULL));
+    for(int i=1;i<=9;i++){
+        a = rand() % 10;
+        b = rand() % 10;
+        arr[i] = i*100+a*10+b;
+        printf("%d\n",arr[i]);
+    }
+    
 }
 
 // 调用函数自变量空间不同，原理是调用函数的时候保持函数的变量不出栈
