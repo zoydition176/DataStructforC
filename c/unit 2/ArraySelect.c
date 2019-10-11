@@ -19,7 +19,8 @@ void initArray(sqlist *q, int n);
 void reverse(sqlist *q);
 void findelement(sqlist q);
 void findmiddle(sqlist q);
-void selectElement();
+int *initArr();
+void selectElement(int *n);
 int testVar();
 
 int main()
@@ -33,7 +34,9 @@ int main()
     findelement(*a);
     testVar(5);
     findmiddle(*a);
-    selectElement();
+    int *k = initArr();
+    selectElement(k);
+    // printf("是%d,%p", k[1], &k);
 }
 
 // 初始化顺序表
@@ -127,18 +130,32 @@ void findmiddle(sqlist q)
 }
 
 // 挑选出百位数值大于十位与个位数值之和的元素
-void selectElement(){
-    int arr[9];
+int *initArr(){// 初始化一个随机的三位数数组，返回整型指针
+    static int arr[9];// 注意：c语言子函数不能返回局部变量的地址，因为局部变量的地址在函数出栈的时候就被清空了。
     int n = 0;
     int a, b;
+    // int *point = &arr;
     srand((unsigned)time(NULL));
-    for(int i=1;i<=9;i++){
+    for(int i=0;i<9;i++){
         a = rand() % 10;
         b = rand() % 10;
-        arr[i] = i*100+a*10+b;
+        arr[i] = (i+1)*100+a*10+b;
         printf("%d\n",arr[i]);
     }
-    
+    return arr;
+}
+
+void selectElement(int *n){// 从数组元素中挑选出百位数值比十位个位之和还要大的元素
+    int m = 0;
+    for(int i=0;i<9;i++){
+        if(((n[i]/100)%10)>((n[i]/10)%10)+(n[i]%10)){
+            printf("符合规则的数是%d\n",n[i]);
+            m++;
+        }
+    }
+    if(m<1){
+        printf("数组没有符合规则的数");
+    }
 }
 
 // 调用函数自变量空间不同，原理是调用函数的时候保持函数的变量不出栈
@@ -156,6 +173,6 @@ int testVar(int n){
 /*
 函数形参只能是自动局部变量，不能是静态局部变量，为什么？
 答：因为静态局部变量的生命周期是从初始化到整个程序结束，静态局部变量在内存中的静态存储区。
-当函数反复调用而实参重新给作为形参的静态局部变量初始化时，主程序没有结束，无法初始化形参。
+当函数反复调用而实参重新给作为形参的静态局部变量初始化时，主程序没有结束，无法初始化形参。顺便提一下，静态局部变量能作为函数的返回值被返回。
 */
 
