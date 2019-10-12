@@ -22,6 +22,7 @@ void findmiddle(sqlist q);
 int *initArr();
 void selectElement(int *n);
 int testVar();
+int testVar2(int a);
 
 int main()
 {
@@ -37,6 +38,9 @@ int main()
     int *k = initArr();
     selectElement(k);
     // printf("是%d,%p", k[1], &k);
+    for(int i=0;i<3;i++){
+        testVar2(2);
+    }
 }
 
 // 初始化顺序表
@@ -170,6 +174,12 @@ int testVar(int n){
     }
 }
 
+int testVar2(int a){
+    static int k = a;
+    k++;
+    printf("k is %x,a is %d",&k,k);
+    return k;
+}
 /*
 函数形参只能是自动局部变量，不能是静态局部变量，为什么？
 答：因为静态局部变量的生命周期是从初始化到整个程序结束，静态局部变量在内存中的静态存储区。
