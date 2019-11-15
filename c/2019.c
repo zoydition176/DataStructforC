@@ -84,3 +84,6 @@ void copy(char *f,char *t){
     }
     *t = '\0';
 }
+void count(){
+
+}
