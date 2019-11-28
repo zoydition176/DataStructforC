@@ -37,10 +37,16 @@ int main()
     // };
     // printf("%d",i);
     // return 0;
-    int x = 3,y = 2 , a[x];
-    int b = 037;
-    printf("%d\n",b);
-    printf("%f",1.0*x/y);
+    // int x = 3,y = 2 , a[x];
+    // int b = 037;
+    // printf("%d\n",b);
+    // printf("%f",1.0*x/y);
+    char *s1="OK",*s2="ok";
+    if(strcmp(s1,s2)!=0){
+        puts(s1);
+    }
+    int symbol = 0;
+    int b70 = 1;
 }
 void snew(char str[]){
     char k[]="xxxxxxx";
