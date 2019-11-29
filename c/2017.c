@@ -6,9 +6,17 @@
 #define MAXSIZE 100
 #define DONE 1
 #define ERROR 0
+#define N 5
+#define M N+1
+#define f(x) (x*M)
 void snew (char str[]);
 int main()
 {
+    int i1,i2;
+    i1 = f(2);
+    i2 = f(1+1);
+    printf("%d,%d\n",i1,i2);
+
     // int n;
     // double z;
     // scanf("%d",&n);
@@ -20,7 +28,7 @@ int main()
     //     z = sin(n * 1.00) / (cos(n * 1.00) + 4);
     // }
     // printf("%f",z);
-    char s[] = "chinabank";
+    // char s[] = "chinabank";
     // puts(s);
     // snew(s);
     // puts(s);
@@ -41,12 +49,35 @@ int main()
     // int b = 037;
     // printf("%d\n",b);
     // printf("%f",1.0*x/y);
-    char *s1="OK",*s2="ok";
-    if(strcmp(s1,s2)!=0){
-        puts(s1);
+
+
+
+    // char *c = "hubei gongye daxue";
+    // int i,j;
+    // for(i=j=0;c[i]!='\0';i++){
+    //     if(c[i]!=' '){
+    //         c[j++]=c[i];
+    //     }else{
+    //         continue;
+    //     }
+    // }
+    // c[j]='\0';
+    // printf("%s\n",c[0]);
+
+
+    static char kkk[5]={'a','e','i','o','u'};
+    char sss[80];
+    int k,j;
+    gets(sss);
+    for(k=0;sss[k]!='\0';k++){
+        for(j=0;j<5;j++){
+            if(sss[k]==kkk[j]){
+                sss[k]=j+'0';
+            }
+        }
     }
-    int symbol = 0;
-    int b70 = 1;
+    puts(sss);
+    
 }
 void snew(char str[]){
     char k[]="xxxxxxx";
