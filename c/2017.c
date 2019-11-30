@@ -12,10 +12,10 @@
 void snew (char str[]);
 int main()
 {
-    int i1,i2;
-    i1 = f(2);
-    i2 = f(1+1);
-    printf("%d,%d\n",i1,i2);
+    // int i1,i2;
+    // i1 = f(2);
+    // i2 = f(1+1);
+    // printf("%d,%d\n",i1,i2);
 
     // int n;
     // double z;
@@ -65,18 +65,34 @@ int main()
     // printf("%s\n",c[0]);
 
 
-    static char kkk[5]={'a','e','i','o','u'};
-    char sss[80];
-    int k,j;
-    gets(sss);
-    for(k=0;sss[k]!='\0';k++){
-        for(j=0;j<5;j++){
-            if(sss[k]==kkk[j]){
-                sss[k]=j+'0';
+    // static char kkk[5]={'a','e','i','o','u'};
+    // char sss[80];
+    // int k,j;
+    // gets(sss);
+    // for(k=0;sss[k]!='\0';k++){
+    //     for(j=0;j<5;j++){
+    //         if(sss[k]==kkk[j]){
+    //             sss[k]=j+'0';
+    //         }
+    //     }
+    // }
+    // puts(sss);
+    for(int i = 1;i<=4;i++){
+        for(int n =1;n<=4;n++){
+            if(n == i ){
+                continue;
+            }else{
+                for(int m = 1;m<=4;m++){
+                    if(m==i||m==n){
+                        continue;
+                    }else{
+                        printf("%d\n",(i*100)+(n*10)+m);
+                    }
+                }
             }
         }
+
     }
-    puts(sss);
     
 }
 void snew(char str[]){
