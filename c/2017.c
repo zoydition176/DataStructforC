@@ -97,8 +97,10 @@ int main()
 
     // }
 
-    f1("abcdefg");
-    
+    // f1("abcdefg");
+    int jok;
+    jok = 0 + '6' - '0';
+    printf("%d\n", '\0');
 }
 void snew(char str[]){
     char k[]="xxxxxxx";
@@ -118,12 +120,15 @@ void snew(char str[]){
 }
 void f1(char *s1){
     char c;
-    puts(s1);
+    char b;
+    b = *s1;
+    putchar(b);
+    // puts(s1);
     if(*s1!='\0'){
         c=*s1;        
         strcpy(s1,s1+1);
         // putchar(c);
-        f1(s1);
+        // f1(s1);
         putchar(c);
     }else{
         printf("qqqq");
