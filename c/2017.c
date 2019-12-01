@@ -6,10 +6,11 @@
 #define MAXSIZE 100
 #define DONE 1
 #define ERROR 0
-#define N 5
-#define M N+1
-#define f(x) (x*M)
+// #define N 5
+// #define M N+1
+// #define f(x) (x*M)
 void snew (char str[]);
+void f1(char *s1);
 int main()
 {
     // int i1,i2;
@@ -77,22 +78,26 @@ int main()
     //     }
     // }
     // puts(sss);
-    for(int i = 1;i<=4;i++){
-        for(int n =1;n<=4;n++){
-            if(n == i ){
-                continue;
-            }else{
-                for(int m = 1;m<=4;m++){
-                    if(m==i||m==n){
-                        continue;
-                    }else{
-                        printf("%d\n",(i*100)+(n*10)+m);
-                    }
-                }
-            }
-        }
 
-    }
+    /**/
+    // for(int i = 1;i<=4;i++){
+    //     for(int n =1;n<=4;n++){
+    //         if(n == i ){
+    //             continue;
+    //         }else{
+    //             for(int m = 1;m<=4;m++){
+    //                 if(m==i||m==n){
+    //                     continue;
+    //                 }else{
+    //                     printf("%d\n",(i*100)+(n*10)+m);
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    // }
+
+    f1("abcdefg");
     
 }
 void snew(char str[]){
@@ -110,4 +115,17 @@ void snew(char str[]){
         i++;
     }
     puts(p);
+}
+void f1(char *s1){
+    char c;
+    puts(s1);
+    if(*s1!='\0'){
+        c=*s1;        
+        strcpy(s1,s1+1);
+        // putchar(c);
+        f1(s1);
+        putchar(c);
+    }else{
+        printf("qqqq");
+    }
 }
