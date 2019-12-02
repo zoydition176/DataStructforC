@@ -100,6 +100,8 @@ int main()
     // f1("abcdefg");
     int jok;
     jok = 0 + '6' - '0';
+    char kkk[5][20];
+    
     printf("%d\n", '\0');
 }
 void snew(char str[]){
@@ -107,6 +109,8 @@ void snew(char str[]){
     char *p = str;
     int i = 0;
     
+
+
     while (str[i]!='\0')
     {
         /* code */
