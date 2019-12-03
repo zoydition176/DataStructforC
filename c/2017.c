@@ -101,7 +101,7 @@ int main()
     int jok;
     jok = 0 + '6' - '0';
     char kkk[5][20];
-    
+    char a[3]={'a','b','c'};
     printf("%d\n", '\0');
 }
 void snew(char str[]){
