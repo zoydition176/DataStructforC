@@ -6,6 +6,7 @@
 #define DONE 1
 #define ERROR 0
 double glg(double c);
+char *sys(long n, int b, char *c);
 int gys(int a, int b);
 int main()
 {
@@ -17,10 +18,29 @@ int main()
     // printf("%Lf\n",p);
     printf("%f\n", glg(1e-4));
     int qqq,ppp;
-    scanf("%d",&qqq);
-    scanf("%d",&ppp);
-    printf("%d\n", gys(qqq,ppp));
+    // scanf("%d",&qqq);
+    // scanf("%d",&ppp);
+    // printf("%d\n", gys(qqq,ppp));
+    char k[80];
+    puts(sys(10,2,k));
     return 0;
+}
+char *sys(long n,int b,char *c){
+    int target[]={};
+    char res[]={};
+    int i = 0,m = 0;
+    while(n!=0){
+        target[i++] = n%b;
+        n = n/b;
+        // printf("%d", target[i]);
+    }
+    while(i!=0){
+        if(target[i]>=10){
+            target[i] = target[i]+87;
+        }
+        c[m++] = target[i--];
+    }
+    return c;
 }
 double glg(double c){
     double t = 0,item = 1;
