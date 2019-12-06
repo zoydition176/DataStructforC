@@ -6,6 +6,7 @@
 #define DONE 1
 #define ERROR 0
 double glg(double c);
+int gys(int a, int b);
 int main()
 {
     // int x,y;
@@ -14,7 +15,8 @@ int main()
     // double p = 1e-4;
     // printf("%d\n",y);
     // printf("%Lf\n",p);
-    printf("%f", glg(1e-4));
+    printf("%f\n", glg(1e-4));
+    printf("%d\n", gys(32,10));
     return 0;
 }
 double glg(double c){
@@ -32,4 +34,12 @@ double glg(double c){
         i++;
     }
     return t*4;
+}
+int gys(int a,int b){
+    int p = a%b;
+    if(p == 0){
+        return b;
+    }else{
+        gys(b,p);
+    }
 }
