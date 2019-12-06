@@ -16,7 +16,10 @@ int main()
     // printf("%d\n",y);
     // printf("%Lf\n",p);
     printf("%f\n", glg(1e-4));
-    printf("%d\n", gys(32,10));
+    int qqq,ppp;
+    scanf("%d",&qqq);
+    scanf("%d",&ppp);
+    printf("%d\n", gys(qqq,ppp));
     return 0;
 }
 double glg(double c){
