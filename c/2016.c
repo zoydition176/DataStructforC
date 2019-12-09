@@ -8,6 +8,7 @@
 double glg(double c);
 char *sys(long n, int b, char *c);
 int gys(int a, int b);
+int josephus(int n, int m);
 int main()
 {
     // int x,y;
@@ -23,9 +24,10 @@ int main()
     // printf("%d\n", gys(qqq,ppp));
     char k[80];
     puts(sys(10,2,k));
+    josephus(8,5);
     return 0;
 }
-char *sys(long n,int b,char *c){
+char *sys(long n,int b,char *c){//数制转换
     int target[]={};
     char res[]={};
     int i = 0,m = 0;
@@ -42,7 +44,7 @@ char *sys(long n,int b,char *c){
     }
     return c;
 }
-double glg(double c){
+double glg(double c){//格力高公式算π
     double t = 0,item = 1;
     int i = 1;
     while (item>=c)
@@ -65,4 +67,26 @@ int gys(int a,int b){
     }else{
         gys(b,p);
     }
+}
+int josephus(int n,int m){
+    int i = 0,j=0;
+    int *p = (int *)malloc(n*sizeof(int));
+    while (i<n)
+    {
+        /* code */
+        p[i] = i+1;
+        i++;
+    }
+    while(n>1){
+        j = (j+m-1)%n;
+        for(int a = j;a<n-1;a++){
+            p[a] = p[a+1];
+        }
+        n--;
+        if(j==n){
+            j = 0;
+        }
+    }
+    printf("%d",p[0]);
+    return p[0];
 }
