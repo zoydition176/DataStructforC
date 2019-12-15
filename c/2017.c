@@ -10,6 +10,7 @@
 // #define M N+1
 // #define f(x) (x*M)
 void snew (char str[]);
+void csdg(int n);
 void f1(char *s1);
 int main()
 {
@@ -98,11 +99,14 @@ int main()
     // }
 
     // f1("abcdefg");
+    // csdg(10);
     int jok;
     jok = 0 + '6' - '0';
     char kkk[5][20];
-    char a[3]={'a','b','c'};
-    printf("%d\n", '\0');
+    char b[3]="abc";
+    char a[4]={'a','b','c','\0'};
+    puts(b);
+    // printf("%d\n", '\0');
 }
 void snew(char str[]){
     char k[]="xxxxxxx";
@@ -124,17 +128,27 @@ void snew(char str[]){
 }
 void f1(char *s1){
     char c;
-    char b;
-    b = *s1;
-    putchar(b);
+    // char b;
+    // b = *s1;
+    // putchar(b);
     // puts(s1);
     if(*s1!='\0'){
         c=*s1;        
         strcpy(s1,s1+1);
         // putchar(c);
-        // f1(s1);
+        printf("dayingyici");
+        f1(s1);
+        printf("dayingyici");
         putchar(c);
+    }
+}
+void csdg(int n){
+    static int m = 0;
+    if(n>=0){
+        printf("%d\t %d\n", n--,m);
+        csdg(n);
+        printf("执行了%d次\n",++m);
     }else{
-        printf("qqqq");
+        printf("不递归了\n");
     }
 }
