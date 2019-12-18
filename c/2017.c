@@ -104,9 +104,9 @@ int main()
     jok = 0 + '6' - '0';
     char kkk[5][20];
     char b[3]="abc";
-    char a[4]={'a','b','c','\0'};
-    puts(b);
-    // printf("%d\n", '\0');
+    char a[4]={'a','2','c','\0'};
+    // puts(b);
+    printf("%d\n", 1+'0');
 }
 void snew(char str[]){
     char k[]="xxxxxxx";
