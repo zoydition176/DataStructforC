@@ -107,6 +107,17 @@ int main()
     char a[4]={'a','2','c','\0'};
     // puts(b);
     printf("%d\n", 1+'0');
+    FILE *fp;
+    char For;
+    // fp = fopen("C:\\Users\\Administrator\\Desktop\\ddd.txt","r");
+    int k;
+    for(k = 1;k+1;k++){
+        if(k>4){
+            printf("%d\n",k++);
+            break;
+        }
+        printf("%d\n",k++);
+    }
 }
 void snew(char str[]){
     char k[]="xxxxxxx";
