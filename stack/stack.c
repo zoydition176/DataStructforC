@@ -11,6 +11,13 @@ typedef struct sqstk
     int top;
 } sqstk;
 
+// 链栈
+typedef struct Lstk
+{
+    int data;
+    struct Lstk *next;
+} Lstk;
+
 // cpp特性是引用类型可以当函数形参传递，c语言不支持，只能用指针做形参。调用的时候用引用型做实参
 void initsqs(sqstk *st)
 {
