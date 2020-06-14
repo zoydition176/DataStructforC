@@ -34,3 +34,31 @@ int *twoSum(int *nums, int numsSize, int target, int *returnSize)
     }
     return 0;
 }
+
+/*
+var lengthOfLongestSubstring = function(s)
+{
+    var k = 0;
+    for (let i = 0; i < s.length; i++)
+    {
+        var b = [];
+        b.push(s[i]);
+        for (var j = i + 1; s[i] != s[j] && j < s.length; j++)
+        {
+            if (!b.includes(s[j]))
+            {
+                b.push(s[j]);
+            }
+            else
+            {
+                break;
+            }
+        }
+        if (k < b.length)
+        {
+            k = b.length;
+        }
+    }
+    return k;
+};
+*/
