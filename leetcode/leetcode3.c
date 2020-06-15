@@ -1,64 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
-int *twoSum(int *nums, int numsSize, int target, int *returnSize);
+#include <string.h>
 
 int main()
 {
     return 1;
 }
-
-int *twoSum(int *nums, int numsSize, int target, int *returnSize)
+// 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+int lengthOfLongestSubstring(char *s)
 {
-    int i;
-    int n = 2;
-    int *c = (int *)malloc(sizeof(int) * n);
-    if (c == NULL)
+    int i = 0;
+    int j = 0;
+    int k = strlen(s);
+    int max = 0;
+    for (i = 0; i < k; i++)
     {
-        printf("内存分配不成功！\n");
-    }
-    else
-    {
-        for (i = 0; i < numsSize; i++)
+        for (int x = j; x < i; x++)
         {
-            for (int j = i + 1; j < numsSize; j++)
+            if (s[x] == s[i])
             {
-                if (nums[i] + nums[j] == target)
+                if (max < i - j)
                 {
-                    c[0] = i;
-                    c[1] = j;
-                    *returnSize = 2;
-                    return c;
+                    max = i - j;
                 }
+                j = x + 1;
             }
         }
+        if (max < i - j + 1)
+        {
+            max = i - j + 1;
+        }
     }
-    return 0;
+    return max;
 }
-
-/*
-var lengthOfLongestSubstring = function(s)
-{
-    var k = 0;
-    for (let i = 0; i < s.length; i++)
-    {
-        var b = [];
-        b.push(s[i]);
-        for (var j = i + 1; s[i] != s[j] && j < s.length; j++)
-        {
-            if (!b.includes(s[j]))
-            {
-                b.push(s[j]);
-            }
-            else
-            {
-                break;
-            }
-        }
-        if (k < b.length)
-        {
-            k = b.length;
-        }
-    }
-    return k;
-};
-*/
