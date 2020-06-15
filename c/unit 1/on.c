@@ -3,7 +3,7 @@
 #define MAXSIZE 100
 #define DONE 1
 #define ERROR 0
-// é˜¶ä¹˜
+// ½×³Ë
 int factorial(int n)
 {
     int res = 1;
@@ -31,10 +31,10 @@ int factorial(int n)
         return res;
     }
 }
-// æ–æ³¢é‚£å¥‘æ•°åˆ—
+// ì³²¨ÄÇÆõÊıÁĞ
 int fib(int n)
 {
-    // å¸¸è§„æ–¹æ³•
+    // ³£¹æ·½·¨
     int q = 1;
     int p = 0;
     int k = 0;
@@ -53,10 +53,10 @@ int fib(int n)
         return q;
     }
 
-    // é€’å½’æ–¹æ³•
+    // µİ¹é·½·¨
 }
 
-// å°é˜¶é—®é¢˜
+// Ì¨½×ÎÊÌâ
 int ladder()
 {
     int n = 7;
@@ -74,7 +74,7 @@ int ladder()
     return n;
 }
 
-// è´§å¸é—®é¢˜
+// »õ±ÒÎÊÌâ
 int currency()
 {
     int n = 0;
@@ -100,7 +100,7 @@ int currency()
     return n;
 }
 
-// å‹¾è‚¡æ•°è¾“å‡º
+// ¹´¹ÉÊıÊä³ö
 void Pythagorean()
 {
     int x;
@@ -116,14 +116,14 @@ void Pythagorean()
                 if (x * x + y * y == z * z)
                 {
                     n = n + 1;
-                    printf("ç¬¬%dç»„å‹¾è‚¡æ•°ä¸º%d,%d,%d\n", n, x, y, z);
+                    printf("µÚ%d×é¹´¹ÉÊıÎª%d,%d,%d\n", n, x, y, z);
                 }
             }
         }
     }
 }
 
-// ç™¾é¸¡é—®é¢˜
+// °Ù¼¦ÎÊÌâ
 void CountChicken()
 {
     int x;
@@ -138,8 +138,8 @@ void CountChicken()
             if (x * 9 + z * 15 + (y - x) * 1 == 300)
             {
                 n = n + 1;
-                printf("è§£%d:\n", n);
-                printf("å…¬é¸¡%dåª\næ¯é¸¡%dåª\nå°é¸¡%dåª\n", z, x, y - x);
+                printf("½â%d:\n", n);
+                printf("¹«¼¦%dÖ»\nÄ¸¼¦%dÖ»\nĞ¡¼¦%dÖ»\n", z, x, y - x);
                 printf("----------------------------\n");
                 break;
             }
@@ -153,22 +153,22 @@ int main()
     int choice;
     while (start)
     {
-        printf("è¯·è¾“å…¥é¢˜å·ï¼ˆ4~9ï¼‰ï¼š\n");
+        printf("ÇëÊäÈëÌâºÅ£¨4~9£©£º\n");
         scanf("%d", &choice);
         switch (choice)
         {
         case 4:
         {
             int num;
-            printf("4.è®¡ç®—é˜¶ä¹˜\nè¯·è¾“å…¥ä¸€ä¸ªæ•°ï¼š");
+            printf("4.¼ÆËã½×³Ë\nÇëÊäÈëÒ»¸öÊı£º");
             scanf("%d", &num);
             if (factorial(num))
             {
-                printf("ç»“æœä¸º:%d\n", factorial(num));
+                printf("½á¹ûÎª:%d\n", factorial(num));
             }
             else
             {
-                printf("å‚æ•°é”™è¯¯!\n");
+                printf("²ÎÊı´íÎó!\n");
             }
             system("pause");
         }
@@ -176,43 +176,43 @@ int main()
         case 5:
         {
             int num;
-            printf("5.è®¡ç®—æ–æ³¢é‚£å¥‘æ•°åˆ—ç¬¬né¡¹\nè¯·è¾“å…¥é¡¹æ•°ï¼š");
+            printf("5.¼ÆËãì³²¨ÄÇÆõÊıÁĞµÚnÏî\nÇëÊäÈëÏîÊı£º");
             scanf("%d", &num);
             if (fib(num))
             {
-                printf("ç»“æœä¸º:%d\n", fib(num));
+                printf("½á¹ûÎª:%d\n", fib(num));
             }
             else
             {
-                printf("å‚æ•°é”™è¯¯!\n");
+                printf("²ÎÊı´íÎó!\n");
             }
             system("pause");
         }
         break;
         case 6:
         {
-            printf("6.è®¡ç®—å°é˜¶æ•°\n");
-            printf("ç»“æœä¸º:%d\n", ladder());
+            printf("6.¼ÆËãÌ¨½×Êı,Ò»Ìõ³¤½×Ìİ£¬ÈôÃ¿²½¿ç2½×£¬Ôò×îºóÊ£Ò»½×£»Ã¿²½3½×£¬Ê£2½×£»Ã¿²½5½×£¬Ê£4½×£»Ã¿²½¿ç6½×£¬Ê£5½×£»Ã¿²½7½×Ôò×îºóÒ»½×²»Ê£¡£\n");
+            printf("½á¹ûÎª:%d\n", ladder());
             system("pause");
         }
         break;
         case 7:
         {
-            printf("7.è´§å¸å‡‘é’±é—®é¢˜\n");
-            printf("ç»“æœä¸º:%d\n", currency());
+            printf("7.»õ±Ò´ÕÇ®ÎÊÌâ£¬1Ôª2Ôª5ÔªÖ½±Ò¹²10ÕÅ£¬´ÕÕû18Ôª£¬ÓĞ¼¸ÖÖ°ì·¨?\n");
+            printf("½á¹ûÎª:%d\n", currency());
             system("pause");
         }
         break;
         case 8:
         {
-            printf("8.å‹¾è‚¡æ•°è¾“å‡ºé—®é¢˜\nè¾“å‡ºç»“æœ:\n");
+            printf("8.¹´¹ÉÊı,Êä³öÎÊÌâ:ÇóÒ»°ÙÒÔÄÚµÄ¹´¹ÉÊı£¬±ÜÃâ3£¬4£¬5Óë5£¬4£¬3ÕâÑùµÄÖØ¸´µÄ¹´¹ÉÊı?\nÊä³ö½á¹û:\n");
             Pythagorean();
             system("pause");
         }
         break;
         case 9:
         {
-            printf("9.ç™¾é¸¡é—®é¢˜\nè¾“å‡ºç»“æœ:\n");
+            printf("9.°Ù¼¦ÎÊÌâ£¬¹«¼¦Îå¿é£¬Ä¸¼¦3¿é£¬Ğ¡¼¦Ò»¿é£¬Ò»°ÙÔªÂòÒ»°ÙÖ»¼¦£¬ÇëÎÊÔõÃ´Âò£¿\nÊä³ö½á¹û:\n");
             CountChicken();
             system("pause");
         }
@@ -223,5 +223,5 @@ int main()
         }
     }
 
-    printf("æ¼”ç¤ºç¨‹åºç»“æŸï¼\n");
+    printf("ÑİÊ¾³ÌĞò½áÊø£¡\n");
 };
