@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 int main()
 {
@@ -101,4 +102,29 @@ int reverse(int x)
         return 0;
     }
     return (int)result;
+}
+
+
+
+bool isPalindrome(int x)
+{
+    if (x < 0)
+    {
+        return false;
+    }
+    long y = x;
+    long res = 0;
+    while (x != 0)
+    {
+        res = res * 10 + x % 10;
+        x = x / 10;
+    }
+    if (res == y)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
