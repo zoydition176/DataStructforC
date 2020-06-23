@@ -5,6 +5,7 @@
 int *sortInt(int *s, int length);
 int *creatArray(int length);
 void printfArray(int *s, int length);
+int select(int n, int m);
 
 int main(){
     int start = 1;
@@ -19,6 +20,7 @@ int main(){
         printf("请选择需要的数组操作：\n");
         printf("1.排序并输出数组。\n");
         printf("2.后移并输出数组。\n");
+        printf("3.排序报号。\n");
         scanf("%d", &choice);
         switch (choice)
         {
@@ -32,6 +34,16 @@ int main(){
         case 2:
         {
             printfArray(k, d);
+            system("pause");
+        }
+        break;
+        case 3:
+        {
+            int j = 1;
+            printf("输入不大于数组长度的号数:\n");
+            scanf("%d",&j);
+            printfArray(k, d);
+            printf("留下的数字为：%d", k[select(d, j)]);
             system("pause");
         }
         break;
@@ -75,8 +87,38 @@ int *creatArray(int length)
 
 int *moveArray(int *s, int length, int num){
     int *temp = (int *)malloc(num * sizeof(int));
+    int m;
+    for(int i=0;i<num;i++){
+        temp[i] = s[length-num+i];
+    }
 }
 
+int select(int n, int m)
+{ 
+    int i = 0, j = 0;
+    int *p = (int *)malloc(n * sizeof(int));
+    while (i < n)
+    {
+        /* code */
+        p[i] = i + 1;
+        i++;
+    }
+    while (n > 1)
+    {
+        j = (j + m - 1) % n;
+        for (int a = j; a < n - 1; a++)
+        {
+            p[a] = p[a + 1];
+        }
+        n--;
+        if (j == n)
+        {
+            j = 0;
+        }
+    }
+    printf("%d\n", p[0]);
+    return p[0];
+}
 
 void printfArray(int *s, int length)
 {
