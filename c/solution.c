@@ -43,7 +43,7 @@ int main(){
             printf("输入不大于数组长度的号数:\n");
             scanf("%d",&j);
             printfArray(k, d);
-            printf("留下的数字为：%d\n", k[select(d, j)]);
+            printf("留下的数字为：%d\n", k[select(d, j)-1]);
             system("pause");
         }
         break;
