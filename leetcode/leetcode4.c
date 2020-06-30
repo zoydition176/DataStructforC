@@ -252,5 +252,31 @@ int maxSubArray(int *nums, int numsSize)
 
 // 计算行列式上三角元素的和
 int sumFun(int *p,int n){
+    int res = 0;
+    for(int i = 0;i<n;i++){
+        for(int j = i;j<n;j++){
+            res = res + p[i*n+j];//二维数组用一维数组的方式表达
+        }
+    }
+    return res;
+}
+
+// 计算行列式上三角元素的和
+int sumSys(int *p, int n)
+{
+    int res = 0;
+    for (int i = 0; i < n; i++)
+    {
+        res = res + p[i * n + i];
+    }
+    for (int j = n - 1; j >= 0; j--)
+    {
+        res = res + p[j * n + (n - j)];
+    }
+    if(n%2==0){
+        return res;
+    }else{
+        return res - p[((n / 2) + 1) * (n + 1)];
+    }
     
 }
