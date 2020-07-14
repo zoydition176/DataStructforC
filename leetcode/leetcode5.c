@@ -39,35 +39,6 @@ struct ListNode *rotateRight(struct ListNode *head, int k)
     return head;
 }
 
-int mySqrt(int x) //二分查找求开方
-{
-    int mid = 0;
-    int min = 0;
-    int max = x;
-    if (x < 0)
-    {
-        return -1;
-    }
-    if (x <= 1)
-    {
-        return x;
-    }
-    while ((min + 1) < max)
-    {
-        mid = min + (max - min) / 2;
-
-        if ((x / mid) < mid)
-        {
-            max = mid;
-        }
-        else
-        {
-            min = mid;
-        }
-    }
-
-    return min;
-}
 
 // 求完美数
 //对于一个 正整数，如果它和除了它自身以外的所有正因子之和相等，我们称它为“完美数”。
@@ -228,6 +199,10 @@ bool validPalindrome(char *s) //判断非回文字符串能否成为回文字符
     return true;
 }
 
+
+// 7 .  8
+
+
 /*
 给定一个正整数数组 nums。
 
@@ -266,3 +241,183 @@ int numSubarrayProductLessThanK(int *nums, int numsSize, int k)
     }
     return res;
 }
+
+
+
+
+// 三数之和的最接近值
+int cmp(int *a, int *b)
+{
+    return *a - *b;
+}
+
+int threeSumClosest(int *nums, int numsSize, int target)
+{
+    int i = 0;
+    int j = 10000;
+    int temp = 0;
+    int res;
+    int left = 0;
+    int right = numsSize - 1;
+    int mid;
+    int k = 1;
+    if (numsSize == 3)
+    {
+        res = nums[0] + nums[1] + nums[2];
+        return res;
+    }
+    qsort(nums, numsSize, sizeof(int), cmp);
+    while (left < numsSize - 2)
+    {
+        mid = left + 1;
+        while (mid < right)
+        {
+            temp = nums[left] + nums[right] + nums[mid];
+            if (temp > target)
+            {
+                i = temp - target;
+                k = 1;
+                right--;
+            }
+            else
+            {
+                i = target - temp;
+                k = 0;
+                mid++;
+            }
+            if (i == 0)
+            {
+                return temp;
+            }
+            j = i < j ? i : j;
+        }
+        left++;
+    }
+    if (k)
+    {
+        return target + j;
+    }
+    else
+    {
+        return target - j;
+    }
+}
+
+// 给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。
+struct ListNode *removeNthFromEnd(struct ListNode *head, int n)
+{
+    struct ListNode *p, *q, *dev;
+    dev = (struct ListNode *)malloc(sizeof(struct ListNode));
+    dev->val = 0;
+    dev->next = head; //可能出现很短的链表，创建一个新的节点，该节点位于head之前
+    p = dev;
+    q = dev;
+    int count = 0;
+    while (p)
+    { //双指针，扫描完链表最后的差值就是要截断的部分
+        count++;
+        p = p->next;
+        if (count > n + 1)
+        {
+            q = q->next;
+        }
+    }
+    q->next = q->next->next; //删除倒数第n个节点
+    return dev->next;
+}
+
+int mySqrt(int x) //求开方
+{
+    int mid = 0;
+    int min = 0;
+    int max = x;
+    if (x < 0)
+    {
+        return -1;
+    }
+    if (x <= 1)
+    {
+        return x;
+    }
+    while ((min + 1) < max)
+    {
+        mid = min + (max - min) / 2;
+
+        if ((x / mid) < mid)
+        {
+            max = mid;
+        }
+        else
+        {
+            min = mid;
+        }
+    }
+
+    return min;
+}
+
+// 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
+struct ListNode *mergeTwoLists(struct ListNode *l1, struct ListNode *l2)
+{
+    if (!l1){
+        return l2;
+    }    
+    if (!l2){
+        return l1;
+    }     
+    struct ListNode *head = (struct ListNode *)malloc(sizeof(struct ListNode));
+    struct ListNode *t = head;
+    while (l1 && l2)
+    {
+        if (l1->val < l2->val)
+        {
+            t->next = l1;
+            l1 = l1->next;
+        }
+        else
+        {
+            t->next = l2;
+            l2 = l2->next;
+        }
+        t = t->next;
+    }
+    if (l1){
+        t->next = l1;
+    }else if (l2){
+        t->next = l2;
+    }   
+    return head->next;
+}
+
+/*
+给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
+
+你可以假设数组中无重复元素。
+*/
+int searchInsert(int *nums, int numsSize, int target)
+{
+    int low = 0;
+    int high = numsSize - 1;
+    int mid = 0;
+
+    while (low <= high)
+    {
+        mid = low + (high - low) / 2;
+
+        if (target > nums[mid])
+        {
+            low = mid + 1;
+        }
+        else if (target < nums[mid])
+        {
+            high = mid - 1;
+        }
+        else if (target == nums[mid])
+        {
+            return mid;
+        }
+    }
+
+    return low;
+}
+
